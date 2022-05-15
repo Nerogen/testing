@@ -1,4 +1,4 @@
 class TestWeb:
 
     def test_module(self):
-        pass
+        assert 1 != 1
