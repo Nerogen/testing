@@ -1,12 +1,10 @@
 name: Tests
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  - push
+  - pull_request
   schedule:
-    - cron: '*/1 * * * *'
+    cron: '*/10 * * * *'
 
 jobs:
   test:
