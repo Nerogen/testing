@@ -100,109 +100,142 @@ namespace witcherGwentCardAnalysisModule {
 
         //FACTION 
         if (key_word[4] == "NOTRHEN_REALMS") {
-            utils::GenerationUtils::generateRelationBetween(ms_context.get(), param, gwent_faction_northen_realms, Keynodes::rrel_gwent_faction);
+            utils::GenerationUtils::generateRelationBetween(ms_context.get(), \
+                                                            
+               param, gwent_faction_northen_realms, Keynodes::rrel_gwent_faction);
         }
         else if (key_word[4] == "SKELLIGE") {
-            utils::GenerationUtils::generateRelationBetween(ms_context.get(), param, gwent_faction_skellige, Keynodes::rrel_gwent_faction);
+            utils::GenerationUtils::generateRelationBetween(ms_context.get(),\
+               param, gwent_faction_skellige, Keynodes::rrel_gwent_faction);
         }
         else if (key_word[4] == "MONSTERS") {
-            utils::GenerationUtils::generateRelationBetween(ms_context.get(), param, gwent_faction_monsters, Keynodes::rrel_gwent_faction);
+            utils::GenerationUtils::generateRelationBetween(ms_context.get(),\
+               param, gwent_faction_monsters, Keynodes::rrel_gwent_faction);
         }
         else if (key_word[4] == "SYNDICATE") {
-            utils::GenerationUtils::generateRelationBetween(ms_context.get(), param, gwent_faction_syndicate, Keynodes::rrel_gwent_faction);
+            utils::GenerationUtils::generateRelationBetween(ms_context.get(),\
+               param, gwent_faction_syndicate, Keynodes::rrel_gwent_faction);
         }
         else if (key_word[4] == "NILFGRAARD") {
-            utils::GenerationUtils::generateRelationBetween(ms_context.get(), param, gwent_faction_nilfgaard, Keynodes::rrel_gwent_faction);
+            utils::GenerationUtils::generateRelationBetween(ms_context.get(),\
+               param, gwent_faction_nilfgaard, Keynodes::rrel_gwent_faction);
         }
         else if (key_word[4] == "SCOIATAEL") {
-            utils::GenerationUtils::generateRelationBetween(ms_context.get(), param, gwent_faction_scoiatael, Keynodes::rrel_gwent_faction);
+            utils::GenerationUtils::generateRelationBetween(ms_context.get(),\
+                param, gwent_faction_scoiatael, Keynodes::rrel_gwent_faction);
         }
 
         //ROW
         if (key_word[5] == "RANGED") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_ranged, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_card_ranged, param);
         }
         else {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_close, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_card_close, param);
         }
 
         //TYPE
         if (key_word[6] == "UNIT") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_unit, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_card_unit, param);
         }
         else {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_special, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_card_special, param);
         }
 
         //SUBTYPE
         if (key_word[7] == "UNIT") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_unit, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_card_unit, param);
         }
         else if (key_word[7] == "HERO") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_hero, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_card_hero, param);
         }
         else if (key_word[7] == "SPECIAL") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_special, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \ 
+                                   Keynodes::gwent_card_special, param);
         }
         else if (key_word[7] == "WETHER") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_weather, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_card_weather, param);
         }
 
 
         //ABILITY
         if (key_word[8] == "MORALE_BOOST") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_morale_boost, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_ability_morale_boost, param);
         }
         else if (key_word[8] == "MEDIC") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_medic, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_medic, param);
         }
         else if (key_word[8] == "AGILE") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_agile, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_agile, param);
         }
         else if (key_word[8] == "BERSERKER") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_berserker, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_berserker, param);
         }
         else if (key_word[8] == "MARDROEME_UNIT") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_mardroeme_unit, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_mardroeme_unit, param);
         }
         else if (key_word[8] == "MUSTER") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_muster, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_muster, param);
         }
         else if (key_word[8] == "SPY") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_spy, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_spy, param);
         }
         else if (key_word[8] == "TIGHT_BOND") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_tight_bond, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_tight_bond, param);
         }
         else if (key_word[8] == "SCROTH_UNIT") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_scorch_unit, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_scorch_unit, param);
         }
         else if (key_word[8] == "COMANDERS_HORN") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_comanders_horn, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_comanders_horn, param);
         }
         else if (key_word[8] == "SCORCH_SPECIAL") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_scorch_special, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_scorch_special, param);
         }
         else if (key_word[8] == "MARDROEME_SPECIAL") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_mardroeme_special, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_mardroeme_special, param);
         }
         else if (key_word[8] == "DECOY") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_decoy, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_decoy, param);
         }
         else if (key_word[8] == "BITING_FROST") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_biting_frost, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_biting_frost, param);
         }
         else if (key_word[8] == "IMPENETRABLE_FOG") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_impenetrable_fog, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_impenetrable_fog, param);
         }
         else if (key_word[8] == "TORRENTIAL_RAIN") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_torrential_rain, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_torrential_rain, param);
         }
         else if (key_word[8] == "CLEAR_WEATHER") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_clear_weather, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_clear_weather, param);
         }
         else if (key_word[8] == "SKELLIGE_STORM") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_ability_skellige_storm, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                    Keynodes::gwent_ability_skellige_storm, param);
         }
 
         // Finish and return
