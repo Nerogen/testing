@@ -50,7 +50,8 @@ namespace witcherGwentCardAnalysisModule {
         if (!edgeAddr.IsValid()) return SC_RESULT_ERROR;
 
         ScAddr questionNode = ms_context->GetEdgeTarget(edgeAddr);
-        ScAddr param = IteratorUtils::getFirstFromSet(ms_context.get(), questionNode);
+        ScAddr param = IteratorUtils::getFirstFromSet(ms_context.get(), \
+                                                      questionNode);
 
         if (!param.IsValid()) return SC_RESULT_ERROR_INVALID_PARAMS;
 
@@ -60,7 +61,8 @@ namespace witcherGwentCardAnalysisModule {
 
         // Form answer
         ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, answer, param);
-        currentIt5 = IteratorUtils::getIterator5(context.get(), currentIt5->Get(2), Keynodes::nrel_gwent_card_description, true);
+        currentIt5 = IteratorUtils::getIterator5(context.get(), currentIt5->Get(2), \
+                                                 Keynodes::nrel_gwent_card_description, true);
         if (!currentIt5->Next()) return SC_RESULT_ERROR;
 
         ScAddr scLink = currentIt5->Get(2);
