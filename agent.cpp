@@ -72,24 +72,31 @@ namespace witcherGwentCardAnalysisModule {
 
         //RUNAME
         ScAddr name_link = context->CreateLink(ScType::LinkConst);
-        ms_context->SetLinkContent(name_link, ScStreamConverter::StreamFromString(key_word[0]));
-        utils::GenerationUtils::generateRelationBetween(ms_context.get(), param, name_link, Keynodes::rrel_gwent_card_name);
+        ms_context->SetLinkContent(name_link, \
+                                   ScStreamConverter::StreamFromString(key_word[0]));
+        utils::GenerationUtils::generateRelationBetween(ms_context.get(), \
+                                   param, name_link, Keynodes::rrel_gwent_card_name);
 
         //RUFLVAOUR 
         ScAddr flavour_link = context->CreateLink(ScType::LinkConst);
-        ms_context->SetLinkContent(flavour_link, ScStreamConverter::StreamFromString(key_word[1]));
-        utils::GenerationUtils::generateRelationBetween(ms_context.get(), param, flavour_link, Keynodes::rrel_gwent_card_flavour);
+        ms_context->SetLinkContent(flavour_link, \
+                                   ScStreamConverter::StreamFromString(key_word[1]));
+        utils::GenerationUtils::generateRelationBetween(ms_context.get(), \
+                                   param, flavour_link, Keynodes::rrel_gwent_card_flavour);
 
         //TYPE
         if (key_word[2] == "UNIT") {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_unit, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm,\
+                                   Keynodes::gwent_card_unit, param);
         }
         else {
-            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, Keynodes::gwent_card_special, param);
+            ms_context->CreateEdge(ScType::EdgeAccessConstPosPerm, \
+                                   Keynodes::gwent_card_special, param);
         }
 
         //STRENGTH
-        ScAddr nodeStrenghth = ValueUtils::ValueNodeFindOrCreate(ms_context, Keynodes::gwent_strength, stoi(key_word[3]));
+        ScAddr nodeStrenghth = ValueUtils::ValueNodeFindOrCreate(ms_context, \
+                                    Keynodes::gwent_strength, stoi(key_word[3]));
 
         //FACTION 
         if (key_word[4] == "NOTRHEN_REALMS") {
